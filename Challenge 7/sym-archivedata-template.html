@@ -1,0 +1,16 @@
+<!-- Extra Credit - the ng-class/mouseenter/mouseleave are also part of the extra credit -->
+<style>
+	.highlighted {background-color: gray;}
+</style>
+
+<div ng-style="{'background-color': config.BackgroundColor, 'border-radius': config.BorderRadius + 'px'}">
+	<h3> {{Label}}, {{UOM}} </h3>
+	<h4> Number of Values: {{Values.length}} </h4>
+	<div ng-repeat="item in Values" ng-show="{{item.Value > 70}}"
+			ng-class="{highlighted: hovered}"
+			ng-mouseenter="hovered = true" 
+			ng-mouseleave="hovered = false"
+			>
+		{{item.Time}} &nbsp {{item.Value | number: config.DisplayDigits}}
+	</div>
+</div>

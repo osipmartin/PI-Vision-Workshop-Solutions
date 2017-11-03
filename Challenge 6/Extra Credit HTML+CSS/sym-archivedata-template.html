@@ -1,0 +1,8 @@
+<link rel="stylesheet" type="text/css" href="Scripts/app/editor/symbols/ext/sym-archivedata-style.css">
+<div class="archivedata-parent">
+	<h3> {{Label}}, {{UOM}} </h3>
+	<h4> Number of Values: {{Values.length}} </h4>
+	<div ng-repeat="item in Values" ng-show="{{item.Value > 70}}" >
+		{{item.Time}} &nbsp {{item.Value | number:2}}
+	</div>
+</div>
